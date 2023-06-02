@@ -97,6 +97,7 @@ exports.get = functions.https.onRequest( async (request, response) => {
       listMessageDocuments.forEach((eadhDoc)=>{
         eadhDoc.delete()
       })
+      await firestore.collection('chats').doc(id).delete()
 
 
       //Delete the user from the "weLikeEachOther" subCollections in both places, in mine, and in the other person's
