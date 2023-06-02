@@ -93,7 +93,7 @@ exports.get = functions.https.onRequest( async (request, response) => {
       //Delete all the chat
 
       const idOfConversation=generateChatId(myId,idOfPersonThatILike);
-      const listMessageDocuments=await firestore.collection('chats').doc(chatId).collection('messages').listDocuments())
+      const listMessageDocuments=await firestore.collection('chats').doc(chatId).collection('messages').listDocuments()
       listMessageDocuments.forEach((eadhDoc)=>{
         eadhDoc.delete()
       })
